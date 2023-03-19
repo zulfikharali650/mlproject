@@ -12,7 +12,7 @@ app = application
 ## Homepage Route
 @app.route('/')
 def index():
-    # Remember, the function below will look for directory named 'templates'
+    # render_template will look for directory named 'templates'
     # make sure 'templates' directory is created with index.html in it
     # index.html is home page by default
     return render_template('index.html')
@@ -38,8 +38,6 @@ def predict_datapoint():
         predict_pipeline = PredictPipeline()
         results=predict_pipeline.predict(pred_df)
         return render_template('home.html', results=results[0])
-
-
 
 if __name__=="__main__":
     app.run(host="0.0.0.0", debug=True)
