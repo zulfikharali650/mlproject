@@ -2,8 +2,6 @@ import sys
 import pandas as pd
 from src.exception import CustomException
 from src.utils import load_object
-# from src.logger import logging
-
 
 class PredictPipeline:
     def __init__(self) -> None:
@@ -23,7 +21,7 @@ class PredictPipeline:
         except Exception as e:
             raise CustomException(e, sys)
 
-# responsible for mapping all FrontEnd inputs to  BackEnd with these particular values
+# Maps all FrontEnd inputs to BackEnd variables
 class CustomData:
     def __init__(self,
         gender: str,
