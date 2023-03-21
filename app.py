@@ -13,7 +13,7 @@ app = application
 def index():
     # render_template will look for directory named 'templates'
     # make sure 'templates' directory is created with index.html in it
-    # index.html is home page by default
+    # index.html is home page by default, or whatever you want to name it
     return render_template('index.html')
 
 @app.route('/predictdata', methods=['GET', 'POST'])
