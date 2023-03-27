@@ -1,4 +1,4 @@
-## End to End Machine Learning Project for Student's Math Grade Prediction
+## End to End Machine Learning Student Performance Indicator
 
 ### Software & Tools Requirements
 
@@ -12,3 +12,8 @@ Create a new environment
 ```
 conda create -p venv python==3.8 -y
 ```
+
+
+#### Current Progress
+
+Fixing GitHub Actions CI/CD pipeline then deploying to AWS Elastic Beanstalk
