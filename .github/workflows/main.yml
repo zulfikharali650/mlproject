@@ -8,14 +8,14 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
+  # pull_request:
+  #   branches:
+  #     - main
 
 # Define the jobs
 jobs:
   # Give job a name
-  pull-request:
+  testing-commit-message:
     #Job only executes if commit message does not contain whatever is in the quotes
     if: ${{ contains(github.event.head_commit.message, 'abcd') }}
 
