@@ -4,7 +4,7 @@ name: Pull Request Action
 # When will action run: Trigger workflow on pull request events
 # but only for the main branch
 on:
-  workflow_dispatch:
+  # workflow_dispatch:
   push:
     branches:
       - main
