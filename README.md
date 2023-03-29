@@ -13,7 +13,7 @@ Create a new environment
 conda create -p venv python==3.8 -y
 ```
 
-
 #### Current Progress
 
-Fixing GitHub Actions CI/CD pipeline then deploying to AWS Elastic Beanstalk
+GitHub Actions CI pipeline test completed.  
+Next, connect Actions to AWS Elastic Beanstalk then deploying docker container to complete the CD implementation.
