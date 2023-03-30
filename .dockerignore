@@ -1,5 +1,47 @@
-venv/
+# Git
 .git
 .gitignore
+.gitattributes
+
+# Github
+.github/
+
+# Virtual environment
+.env
+.venv/
+venv/
+
+# Byte-compiled / optimized / DLL files
+**/__pycache__/
+**/*.py[cod]
+*/__pycache__/
+
+# VS Code
 .vscode/
 *.code-workspace
+
+# Docker
+docker-compose.yml
+Dockerfile
+.docker
+.dockerignore
+
+# Distribution / packaging
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Project
+README.md

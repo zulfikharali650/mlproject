@@ -17,4 +17,5 @@ RUN pip install -r requirements.txt
 EXPOSE $PORT
 
 # Intend gunicorn to be the entrypoint command for this image
-CMD gunicorn --workers=2 --threads=2 --bind 0.0.0.0:$PORT app:app
+ENTRYPOINT [ "gunicorn" ]
+CMD ["--workers=2", "--threads=2", "--bind", "0.0.0.0:$PORT", "app:app"]
