@@ -1,36 +1,62 @@
 # Name of workflow
-name: Push and Pull Action
-
+name: Build and deploy Python app to AWS Web App
 # When will action run: Trigger workflow on pull request events
 # but only for the main branch
 on:
-  # workflow_dispatch:
   push:
     branches:
-      - main
+      - main_test
   # pull_request:
   #   branches:
   #     - main
+  workflow_dispatch:
 
 # Define the jobs
 jobs:
-  # Give job a name
-  testing-commit-message:
-    #Job only executes if commit message does not contain whatever is in the quotes if ! infront of contains
-    if: ${{ contains(github.event.head_commit.message, 'abcd') }}
+  # # Give job a name
+  # testing-commit-message:
+  #   #Job only executes if commit message does not contain whatever is in the quotes if ! infront of contains
+  #   if: ${{ contains(github.event.head_commit.message, 'abcd') }}
 
-    # define the runner that the job will run on
+  #   # define the runner that the job will run on
+  #   runs-on: ubuntu-latest
+
+  #   # Gives steps: sequence of tasks that will be executed for the job
+  #   steps:
+  #     # check-out your repo under $GITHUB_WORKSPACES, so job can access it
+  #     # Needed because GitHub needs to clone the branch to pipeline
+  #     - name: Checkout
+  #       uses: actions/checkout@v3
+
+  #     - name: Checking test
+  #       run: |
+  #         echo commit message is empty
+  #         echo ${{ github.event.head_commit.message }}
+  build:
     runs-on: ubuntu-latest
 
-    # Gives steps: sequence of tasks that will be executed for the job
     steps:
-      # check-out your repo under $GITHUB_WORKSPACES, so job can access it
-      # Needed because GitHub needs to clone the branch to pipeline
-      - name: Checkout
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v2
 
-      - name: Checking test
+      - name: Set up Python version
+        uses: actions/setup-python@v1
+        with:
+          python-version: '3.8'
+
+      - name: Create and start virtual environment
         run: |
-          echo commit message is empty
-          echo ${{ github.event.head_commit.message }}
-
+          python -m venv venv
+          source venv/bin/activate
+      
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+        
+      # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
+      
+      - name: Upload artifact for deployment jobs
+        uses: actions/upload-artifact@v2
+        with:
+          name: python-app
+          path: |
+            . 
+            !venv/
