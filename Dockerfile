@@ -17,5 +17,7 @@ RUN pip install -r requirements.txt
 EXPOSE $PORT
 
 # Intend gunicorn to be the entrypoint command for this image
+# Used FLASK (WSGI), so gunicorn is needed for interfacing
+# FastAPI (ASGI), uvicorn is needed
 ENTRYPOINT [ "gunicorn" ]
 CMD ["--workers=2", "--threads=2", "--bind", "0.0.0.0:$PORT", "app:app"]
