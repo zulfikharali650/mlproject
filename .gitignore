@@ -135,3 +135,5 @@ dmypy.json
 
 # Docker
 .dockerignore
+/artifacts
+/data
