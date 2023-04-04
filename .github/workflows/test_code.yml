@@ -1,4 +1,4 @@
-name: Check pull request and merge if check passes
+name: Test code and app when a pull request occurs
 
 on:
   pull_request:
@@ -21,7 +21,7 @@ jobs:
       - name: Checkout repo # Check out a repo
         uses: actions/checkout@v2
 
-      - name: Setup python version # Set up with a specific version of Python
+      - name: Environment setup # Set up with a specific version of Python
         uses: actions/setup-python@v2
         with: # inserts input parameters required by an action.
           python-version: 3.8
