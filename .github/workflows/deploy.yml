@@ -3,7 +3,7 @@ name: Deploy App
 on:
   push:
     branches:
-      - master
+      - main1
     paths:
       - artifacts/**
       - src/**
@@ -12,7 +12,7 @@ on:
       - logs/**
       - .github/workflows/deploy.yaml
   workflow_dispatch:
-  
+
 jobs:
   deploy_app:
     name: Deploy App
@@ -41,7 +41,7 @@ jobs:
       - name: Install packages
         run: pip install -r application/requirements.txt
 
-      - name: Pull data
+      # - name: Pull data
         # run: |
         #     dvc remote modify origin --local auth basic
         #     dvc remote modify origin --local user ${{ secrets.DAGSHUB_USERNAME }}
@@ -49,10 +49,10 @@ jobs:
         #     dvc pull -r origin train_model
 
 
-      - name: Save model to # $NAMEOFLOCALSTORE (i.e., BentoML) local store
+      # - name: Save model to # $NAMEOFLOCALSTORE (i.e., BentoML) local store
         # run: python /src/save_model_to_bentoml.py
 
-      - name: Build MLflow model # (i.e., Bentos)
+      # - name: Build MLflow model # (i.e., Bentos)
         # run: bentoml build
 
       # - name: Heroku login credentials
