@@ -42,5 +42,7 @@ jobs:
       - name: Install packages # Install dependencies
         run: pip install -r requirements.txt
 
-      # Next test the changes, the unit testing part.
+      # Next, test the changes, i.e., the unit testing part but for machine learning models.
       # Need to use hypothesis and pandera packages to setup automatic unit testing of app
+      # Neeed to have individual files each component and should be in a folder called test
+      # The next steps will utilize the test folder to perform the range of test that are setup for each component.
