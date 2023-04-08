@@ -1,6 +1,6 @@
 # End-to-End Machine Learning Student Performance Indicator
 
-This project understands how the student's performance (test scores) is affected by other variables such as Gender, Ethnicity, Parental level of education, Lunch and Test preparation course. 
+This project's goal is to understand how a student performance (test scores) is affected by variables such as gender, ethnicity, parental level of education, lunch and test preparation course. My goal, with this project, is to implement and test production level methods/technique to help me understand, develop and advance my DevOps/MLOps skills.    
 
 ## Software & Tools Requirements
 
@@ -9,19 +9,6 @@ This project understands how the student's performance (test scores) is affected
 3. [GitCLI](https://git-scm.com/book/en/v2/Getting-Started-The-Command-Line)
 4. [DVC](https://dvc.org/)  --> the data files are stored in my local drive.
 5. [AWS](https://aws.amazon.com/)  --> This has not been properly setup yet.
-
-## Current Progress
-
-- GitHub Actions CI pipeline test completed.  
-- Currently setting up Data Version Control (DVC)
-
-## TODO
-
-- Setup property-based testing using following python packages
--- hypothesis
--- panderas
-
-
 
 ## Machine Learning Projects Life Cycle
 
@@ -33,7 +20,29 @@ This project understands how the student's performance (test scores) is affected
 - Model Training
 - Choose best model
 
-# Project's Phases and Approach 
+
+## Current Progress
+
+- GitHub Actions CI pipeline test completed.  
+- Currently setting up Data Version Control (DVC)
+
+## TODO
+
+- Setup property-based testing using following python packages:
+  * hypothesis
+  * panderas
+
+## Project's Phases and Approach 
+<style>
+    pre {
+    max-height: 300px;
+    overflow-y: auto;
+    }
+
+    pre[class] {
+    max-height: 100px;
+    }
+</style>
 
 1. Data Ingestion: 
     * The data is first read from csv
@@ -54,7 +63,7 @@ This project understands how the student's performance (test scores) is affected
 3. Model Training: 
     * The base model trained using GridSearchCV to test multiple ML methods and respective parameters
     * Hyperparameters for each model:
-      ```python
+        ```{python}
         params={
             "Decision Tree": {
                 'criterion':['squared_error', 'friedman_mse', 'absolute_error', 'poisson'],
@@ -97,7 +106,7 @@ This project understands how the student's performance (test scores) is affected
             }
         } 
         ```
-    * This model is saved as pickle file in the artifacts folder
+    * Best model is then selected via R<sup>2</sup> values (i.e., Random Forest produced best result) and saved as pickle file in the artifacts folder
 
 4. Prediction Pipeline: 
     * This pipeline converts given data into dataframe and has various functions to load pickle files and predict the final results in python.
