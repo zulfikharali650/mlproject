@@ -5,7 +5,7 @@ name: Build and deploy Python app to AWS Web App
 on:
   push:
     branches:
-      - main_test
+      - main1
   # pull_request:
   #   branches:
   #     - main
