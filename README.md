@@ -22,6 +22,20 @@ This project's goal is to understand how a student performance (test scores) is 
 - Model Training
 - Choose best model
 
+## Machine Learning End-To-End Project Life Cycle 
+  1. Objective & criteria
+  2. Data collection
+  3. Data splitting
+  4. Exploration
+  5. Algorithms
+  6. Training
+  7. Tuning & debugging
+  8. Validation 
+  9. Testing
+  10. Productionization
+  11. Launch decision
+  12. Monitoring & maintenance
+
 ## Current Progress
 
 - GitHub Actions CI pipeline test completed.  
