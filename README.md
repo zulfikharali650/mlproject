@@ -1,6 +1,7 @@
 # End-to-End Machine Learning Student Performance Indicator
 
 ## Overview
+
 This project's goal is to understand how a student performance (test scores) is affected by variables such as gender, ethnicity, parental level of education, lunch and test preparation course. My goal, with this project, is to implement and test production level methods/technique to help me understand, develop and advance my DevOps/MLOps skills.    
 
 ## Software & Tools Requirements
@@ -11,7 +12,7 @@ This project's goal is to understand how a student performance (test scores) is 
 4. [DVC](https://dvc.org/)  --> the data files are stored in my local drive.
 5. [AWS](https://aws.amazon.com/)  --> This has not been properly setup yet.
 
-## Machine Learning Projects Life Cycle
+## Machine Learning Project Life Cycle
 
 - Understanding the Problem Statement
 - Data Collection
@@ -20,7 +21,6 @@ This project's goal is to understand how a student performance (test scores) is 
 - Data Pre-Processing
 - Model Training
 - Choose best model
-
 
 ## Current Progress
 
@@ -34,16 +34,6 @@ This project's goal is to understand how a student performance (test scores) is 
   * panderas
 
 ## Project's Phases and Approach 
-<!-- <style>
-    pre {
-    max-height: 300px;
-    overflow-y: auto;
-    }
-
-    pre[class] {
-    max-height: 100px;
-    }
-</style> -->
 
 1. Data Ingestion: 
     * The data is first read from csv
@@ -51,19 +41,20 @@ This project's goal is to understand how a student performance (test scores) is 
     * Then saved to csv file in the artifacts folder
 
 2. Data Transformation: 
-    * ColumnTransformer Pipeline is created:
+    * ColumnTransformer Pipeline is created (in the specified order):
       * Numeric Variables: 
-        * SimpleImputer is applied, with strategy=median, to handle missing values
-        * Then, Standard Scaling is performed for scaling
+        * `SimpleImputer`, with strategy=median, to handle missing values
+        * `Standard Scaling` for scaling
       * Categorical Variables: 
-        * SimpleImputer is applied, with most frequent=strategy, to handle missing values
-        * Then, OneHotEncoding performed, to transforms categorical data into numerical values
-        * After, Standard Scaling is performed for scaling
+        * `SimpleImputer`, with most frequent=strategy, to handle missing values
+        * `OneHotEncoding` to transforms categorical data into numerical values
+        * `Standard Scaling` for scaling
     * The preprocessor is saved as pickle file in the artifacts folder
 
 3. Model Training: 
-    * The base model trained using GridSearchCV to test multiple ML methods and respective parameters
-    * Best model is then selected via R<sup>2</sup> values (i.e., Random Forest produced best result) and saved as pickle file in the artifacts folder
+    * The base model is trained using `GridSearchCV` to test multiple ML methods and respective parameters
+    * Best model is selected based on the $R^{2}$ values (i.e., Random Forest produced best result) and saved as pickle file in the artifacts folder
+    * Mean Squared Error and Mean Absolute Error were tested when model was intially trained (in Jupyter Notebook), but decided to go with $R^{2}$ since determining the best model (from all the tested models) required setting a minimum threshold between $0$ and $1$.  
         <details>
         <summary>Hyperparameters for each model:</summary>
 
@@ -130,10 +121,6 @@ conda activate venv/
 ```
 pip install -r requirements.txt
 ```
-
-
-
-
 
 
 <!-- Setting up automatic pull_request test via Actions. Need to apply unit tests within python code via hypothesis and pandera before the automatic pull_request test is able to be completed. -->
