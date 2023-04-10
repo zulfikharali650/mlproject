@@ -1,4 +1,4 @@
-name: Test code and app when a pull request occurs
+name: Test code when a pull request occurs
 
 on:
   pull_request:
