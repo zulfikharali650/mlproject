@@ -26,7 +26,9 @@ class DataIngestion:
         logging.info("Entered the data ingestion component")
         try:
             #Change reading method with respect to the data source
-            df=pd.read_csv("notebook\data\stud.csv")
+            file_path = os.path.join('notebook', 'data', 'train.csv')
+            df = pd.read_csv(file_path)
+            # df=pd.read_csv("notebook\data\stud.csv")
             logging.info("Dataset read as dataframe")
 
             os.makedirs(os.path.dirname(self.ingestion_config.train_data_path), exist_ok=True)
@@ -55,7 +57,6 @@ if __name__=="__main__":
     data_transformation = DataTransformation()
     train_arr, test_arr, _ = data_transformation.initiate_data_transformation(train_data, test_data)
 
-    modeltrainer=ModelTrainer()
-    print(modeltrainer.initiate_model_trainer(train_arr, test_arr))
-
+    model_trainer = ModelTrainer()
+    print(model_trainer.initiate_model_trainer(train_arr, test_arr))
 
