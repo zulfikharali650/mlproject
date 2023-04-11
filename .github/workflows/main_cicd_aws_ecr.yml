@@ -1,0 +1,57 @@
+name: workflow
+
+on:
+  push:
+    branches:
+      - main1
+    paths-ignore:
+      - 'README.md'
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  integration:
+    name: Continuous Integration
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3 
+
+      - name: Linting Code
+        run: echo "Linting Repository"
+
+      - name: Run Unit Tests
+        run: echo "Running unit tests"
+
+  build-push-ecr-image:
+    name: Continuous Delivery
+    needs: integration
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Install Utilities
+        run: |
+          sudo apt-get update && apt-get install -y jp unzip
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: $ {{ secrets.lllll  }}
+          
+
+  Continuous-Deployment:
+    needs: build-push-ecr-image
+    runs-on: self-hosted
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{  secrets.lllll  }}
+

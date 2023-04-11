@@ -1,0 +1,4 @@
+# mlp:
+#   build: .
+#   volumes:
+#     - '.:/app'

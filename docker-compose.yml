@@ -1,14 +1,20 @@
 # docker-compose.yml
 version: '3.9'
 services:
-  mlp:
-      build: .
-      container_name: "aws ci cd test"
-      # environment:
-      #   - PORT
-      ports: "8000:${PORT}"
-  redis:
+  redis: 
+    #  image: redislabs/redismod
     image: "redis:alpine"
+    ports:
+      - '6379:6379' 
+  mlp:
+    build: .
+    container_name: "aws ci cd test"
+    # environment:
+    #   - PORT
+    ports: 
+      - "8000:${PORT}"
+    depends_on:
+      - redis
 
 
   # app:
