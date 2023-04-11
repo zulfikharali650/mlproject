@@ -1,0 +1,17 @@
+# docker-compose.yml
+version: '3.9'
+services:
+  mlp:
+      build: .
+      container_name: "aws ci cd test"
+      # environment:
+      #   - PORT
+      ports: "8000:${PORT}"
+  redis:
+    image: "redis:alpine"
+
+
+  # app:
+  #   image: registry.local.com/app
+
+    

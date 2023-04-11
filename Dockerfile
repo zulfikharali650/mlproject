@@ -3,6 +3,7 @@ FROM python:3.8
 
 # Set the file maintainer
 LABEL maintainer="Zulfi Ali <zulfikharali650@gmail.com>" 
+# ENV FLASK_RUN_HOST=0.0.0.0
 
 # Set the work directory
 WORKDIR /app
