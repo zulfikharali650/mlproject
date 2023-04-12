@@ -41,6 +41,16 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: $ {{ secrets.lllll  }}
+
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v1
+
+      - name: Build, Tag, and Push Image to AWS ECR
+        id: build-image
+        env:
+          ECR_REGISTRY: ${{}}
+          IMAGE_TAG: latest
           
 
   Continuous-Deployment:
@@ -54,4 +64,12 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{  secrets.lllll  }}
+
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v1
+
+      - name: Pull Latest Image
+        run:
+          docker pull ${{secrets.}}/${{secrets.}}:latest
 
