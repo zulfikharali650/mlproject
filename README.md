@@ -144,9 +144,12 @@ pip install -r requirements.txt
 
 
 ## Setup Github Secrets for AWS
-- AWS_ACCESS_KEY_ID=
-- AWS_SECRET_ACCESS_KEY=
-- AWS_REGION = 
-- AWS_ECR_LOGIN_URI = 
-- ECR_REPOSITORY_NAME = 
-  * ECR needed for docker images in AWS
+- AWS_ACCESS_KEY_ID
+- AWS_SECRET_ACCESS_KEY
+- AWS_REGION:
+  * It is the location of the EC2 (virtual server in the cloud)
+- AWS_ECR_LOGIN_URI
+  * Only paste the url without the repository name when setting up ECR
+- ECR_REPOSITORY_NAME:
+  * ECR needed for docker images in AWS (Elastic Container Registry)
+  * Only paste the name of the repository
