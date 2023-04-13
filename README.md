@@ -141,3 +141,12 @@ pip install -r requirements.txt
 
 <!-- ON HOLD: Next, connect Actions to AWS Elastic Beanstalk then deploying python container to complete the CD implementation. -->
 <!-- Then repeat with docker container -->
+
+
+## Setup Github Secrets for AWS
+- AWS_ACCESS_KEY_ID=
+- AWS_SECRET_ACCESS_KEY=
+- AWS_REGION = 
+- AWS_ECR_LOGIN_URI = 
+- ECR_REPOSITORY_NAME = 
+  * ECR needed for docker images in AWS
