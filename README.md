@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project's goal is to understand how a student performance (test scores) is affected by variables such as gender, ethnicity, parental level of education, lunch and test preparation course. My goal, with this project, is to implement and test production level methods/technique to help me understand, develop and advance my DevOps/MLOps skills.    
+This project aims to understand how a student's performance (test scores) is affected by gender, ethnicity, parental level of education, and lunch and test preparation course. With this project, I aim to implement and test production-level methods/techniques to help me understand, develop and advance my DevOps/MLOps skills.     
 
 ## Software & Tools Requirements
 
@@ -22,7 +22,7 @@ This project's goal is to understand how a student performance (test scores) is 
 - Model Training
 - Choose best model
 
-## Machine Learning End-To-End Project Life Cycle 
+## End-to-End Machine Learning Project Life Cycle 
   1. Objective & criteria
   2. Data collection
   3. Data splitting
@@ -35,19 +35,6 @@ This project's goal is to understand how a student performance (test scores) is 
   10. Productionization
   11. Launch decision
   12. Monitoring & maintenance
-
-## CI/CD setup
-
-- GitHub Actions CI/CD pipeline with AWS for deploying app with Docker Image
-  * Build Docker image from project
-  * Setup ECR for container registry
-  * Setup and configure EC2 instance (virtual Linux server) as self-hosted runner 
-    * Setup docker in EC2 to pull and deploy docker image in ECR
-    * In security group --> in the Edit Inbound Rules: add "Custom TCP" and match port to apps port  
-  * Configured app-runner (i.e., self-hosted runner) in projects Github runner settings
-    * Each line of code was performed in the EC2 instance
-    * This stage is where the name "self-hosted" is set
-  * Setup the required secret keys (listed below) in projects Github repo 
 
 <!-- ## TODO
 
@@ -145,12 +132,18 @@ conda activate venv/
 pip install -r requirements.txt
 ```
 
+### CI/CD setup
 
-<!-- Setting up automatic pull_request test via Actions. Need to apply unit tests within python code via hypothesis and pandera before the automatic pull_request test is able to be completed. -->
-
-<!-- ON HOLD: Next, connect Actions to AWS Elastic Beanstalk then deploying python container to complete the CD implementation. -->
-<!-- Then repeat with docker container -->
-
+- GitHub Actions CI/CD pipeline with AWS for deploying app with Docker Image
+  * Build Docker image from project
+  * Setup ECR for container registry
+  * Setup and configure EC2 instance (virtual Linux server) as self-hosted runner 
+    * Setup docker in EC2 to pull and deploy docker image in ECR
+    * In security group --> in the Edit Inbound Rules: add "Custom TCP" and match port to apps port  
+  * Configured app-runner (i.e., self-hosted runner) in projects Github runner settings
+    * Each line of code was performed in the EC2 instance
+    * This stage is where the name "self-hosted" is set
+  * Setup the required secret keys (listed below) in projects Github repo 
 
 ## Setup Github Secrets for AWS
 - AWS_ACCESS_KEY_ID
@@ -162,3 +155,4 @@ pip install -r requirements.txt
 - ECR_REPOSITORY_NAME:
   * ECR needed for docker images in AWS (Elastic Container Registry)
   * Only paste the name of the repository
+
