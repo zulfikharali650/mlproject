@@ -1,9 +1,10 @@
+# Name of workflow
 name: Deploy App
 
 on:
   push:
     branches:
-      - main1
+      - main_test
     paths:
       - artifacts/**
       - src/**
@@ -28,7 +29,7 @@ jobs:
       - name: Environment setup
         uses: actions/setup-python@v2
         with:
-          python-version: 3.8
+          python-version: '3.8'
           cache: pip
 
       - name: Cache

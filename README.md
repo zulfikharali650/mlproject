@@ -10,7 +10,7 @@ This project's goal is to understand how a student performance (test scores) is 
 2. [VSCodeIDE](https://code.visualstudio.com/)
 3. [GitCLI](https://git-scm.com/book/en/v2/Getting-Started-The-Command-Line)
 4. [DVC](https://dvc.org/)  --> the data files are stored in my local drive.
-5. [AWS](https://aws.amazon.com/)  --> This has not been properly setup yet.
+5. [AWS](https://aws.amazon.com/)
 
 ## Machine Learning Project Life Cycle
 
@@ -36,16 +36,25 @@ This project's goal is to understand how a student performance (test scores) is 
   11. Launch decision
   12. Monitoring & maintenance
 
-## Current Progress
+## CI/CD setup
 
-- GitHub Actions CI pipeline test completed.  
-- Currently setting up Data Version Control (DVC)
+- GitHub Actions CI/CD pipeline with AWS for deploying app with Docker Image
+  * Build Docker image from project
+  * Setup ECR for container registry
+  * Setup and configure EC2 instance (virtual Linux server) as self-hosted runner 
+    * Setup docker in EC2 to pull and deploy docker image in ECR
+    * In security group --> in the Edit Inbound Rules: add "Custom TCP" and match port to apps port  
+  * Configured app-runner (i.e., self-hosted runner) in projects Github runner settings
+    * Each line of code was performed in the EC2 instance
+    * This stage is where the name "self-hosted" is set
+  * Setup the required secret keys (listed below) in projects Github repo 
 
-## TODO
+<!-- ## TODO
 
 - Setup property-based testing using following python packages:
-  * hypothesis
-  * panderas
+  hypothesis
+  panderas 
+  -->
 
 ## Project's Phases and Approach 
 
