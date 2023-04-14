@@ -119,7 +119,7 @@ This project aims to understand how a student's performance (test scores) is aff
 5. Flask App creation: 
     * Flask app is created with User Interface to predict the the students math score inside a Web Application.
 
-## Setup 
+## Setup Project 
 
 ### Create an Environment
 ```
@@ -132,7 +132,7 @@ conda activate venv/
 pip install -r requirements.txt
 ```
 
-### CI/CD setup
+## Setup Github Actions CI/CD with AWS 
 
 - GitHub Actions CI/CD pipeline with AWS for deploying app with Docker Image
   * Build Docker image from project
