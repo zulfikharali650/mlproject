@@ -2,7 +2,8 @@
 
 ## Overview
 
-This project aims to understand how a student's performance (test scores) is affected by gender, ethnicity, parental level of education, and lunch and test preparation course. With this project, I aim to implement and test production-level methods/techniques to help me understand, develop and advance my DevOps/MLOps skills.     
+The goal of this project is to implement industry-standard methods and techniques to advance my skills in DevOps/MLOps. Specifically, I will analyze how a student's performance (test scores) is affected by gender, ethnicity, parental level of education, lunch, and test preparation course, using a simple indicator. I will start by gathering the data from Kaggle and performing Exploratory Data Analysis (EDA), followed by data pre-processing. Next, I will build and test an ML model in Jupyter. Once completed, I will productionize the code and set up a GitHub Actions CI/CD pipeline to deploy a Docker image into AWS ECR. Finally, the image will be pulled into an EC2 instance for deployment.
+    
 
 ## Software & Tools Requirements
 
@@ -17,7 +18,7 @@ This project aims to understand how a student's performance (test scores) is aff
 - Understanding the Problem Statement
 - Data Collection
 - Data Checks to perform
-- Exploratory data analysis
+- Exploratory Data Analysis (EDA)
 - Data Pre-Processing
 - Model Training
 - Choose best model
