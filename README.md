@@ -1,8 +1,18 @@
 # End-to-End Machine Learning Student Performance Indicator
 
-## Overview
+# Project Overview
 
 The goal of this project is to implement industry-standard methods and techniques to advance my skills in DevOps/MLOps. Specifically, I will analyze how a student's performance (test scores) is affected by gender, ethnicity, parental level of education, lunch, and test preparation course, using a simple indicator. I will start by gathering the data from Kaggle and performing Exploratory Data Analysis (EDA), followed by data pre-processing. Next, I will build and test an ML model in Jupyter. Once completed, I will productionize the code and set up a GitHub Actions CI/CD pipeline to deploy a Docker image into AWS ECR. Finally, the image will be pulled into an EC2 instance for deployment.
+
+## Table of Contents
+
+- [Software & Tools Requirements](#software--tools-requirements)
+- [Machine Learning Project Life Cycle](#machine-learning-project-life-cycle)
+- [End-to-End Machine Learning Project Life Cycle](#end-to-end-machine-learning-project-life-cycle)
+- [Project's Phases and Approach](#projects-phases-and-approach)
+- [Setup Project ](#setup-project)
+- [Setup Github Actions CI/CD with AWS ](#setup-github-actions-cicd-with-aws)
+- [Setup Github Secrets for AWS](#setup-github-secrets-for-aws)
     
 
 ## Software & Tools Requirements
@@ -10,7 +20,7 @@ The goal of this project is to implement industry-standard methods and technique
 1. [Github Account](https://github.com)
 2. [VSCodeIDE](https://code.visualstudio.com/)
 3. [GitCLI](https://git-scm.com/book/en/v2/Getting-Started-The-Command-Line)
-4. [DVC](https://dvc.org/)  --> the data files are stored in my local drive.
+4. [DVC](https://dvc.org/) --> the data files are stored in my local drive.
 5. [AWS](https://aws.amazon.com/)
 
 ## Machine Learning Project Life Cycle
@@ -23,26 +33,20 @@ The goal of this project is to implement industry-standard methods and technique
 - Model Training
 - Choose best model
 
-## End-to-End Machine Learning Project Life Cycle 
-  1. Objective & criteria
-  2. Data collection
-  3. Data splitting
-  4. Exploration
-  5. Algorithms
-  6. Training
-  7. Tuning & debugging
-  8. Validation 
-  9. Testing
-  10. Productionization
-  11. Launch decision
-  12. Monitoring & maintenance
+## End-to-End Machine Learning Project Life Cycle
 
-<!-- ## TODO
-
-- Setup property-based testing using following python packages:
-  hypothesis
-  panderas 
-  -->
+1. Objective & criteria
+2. Data collection
+3. Data splitting
+4. Exploration
+5. Algorithms
+6. Training
+7. Tuning & debugging
+8. Validation
+9. Testing
+10. Productionization
+11. Launch decision
+12. Monitoring & maintenance
 
 ## Project's Phases and Approach 
 
@@ -65,7 +69,7 @@ The goal of this project is to implement industry-standard methods and technique
 3. Model Training: 
     * The base model is trained using `GridSearchCV` to test multiple ML methods and respective parameters
     * Best model is selected based on the $R^{2}$ values (i.e., Random Forest produced best result) and saved as pickle file in the artifacts folder
-    * Mean Squared Error and Mean Absolute Error were tested when model was intially trained (in Jupyter Notebook), but decided to go with $R^{2}$ since determining the best model (from all the tested models) required setting a minimum threshold between $0$ and $1$.  
+    * Mean Squared Error and Mean Absolute Error were tested when model was intially trained (in Jupyter Notebook), but decided to go with $R^{2}$ since determining the best model (from all the tested models) required setting a minimum threshold between $0$ and $1$.
         <details>
         <summary>Hyperparameters for each model:</summary>
 
